@@ -10,6 +10,7 @@ import deskStructure from './plugins/deskStructure'
 import schema from './schema/schema'
 import {Logo} from './plugins/logo/Logo'
 import {scheduledPublishing} from '@sanity/scheduled-publishing'
+import {autocompletInput} from 'sanity-plugin-autocomplete-input'
 
 const title = process.env.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_TITLE || 'Leicht Westchester - CMS'
 
@@ -28,6 +29,7 @@ export default defineConfig({
       defaultDocumentNode: defaultDocumentNodeResolver,
     }),
     media(),
+    autocompletInput(),
     scheduledPublishing(),
     visionTool({defaultApiVersion: apiVersion}),
     cloudinaryAssetSourcePlugin(),

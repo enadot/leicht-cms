@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import {DocumentTextIcon} from '@sanity/icons'
 
 export const formType = defineType({
   name: 'form',
@@ -21,4 +22,18 @@ export const formType = defineType({
       },
     }),
   ],
+  icon: DocumentTextIcon,
+  preview: {
+    select: {
+      title: 'heading',
+      image: 'image',
+    },
+    prepare({title, image}) {
+      return {
+        title: title || 'Untitled',
+        subtitle: 'Hero',
+        media: image || DocumentTextIcon,
+      }
+    },
+  },
 })

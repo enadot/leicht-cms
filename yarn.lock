@@ -5134,6 +5134,26 @@ json5@^2.2.3:
     object.assign "^4.1.4"
     object.values "^1.1.6"
 
+just-compact@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.npmjs.org/just-compact/-/just-compact-3.2.0.tgz#2df81a24550d944cbfe06e55b1875c84f03fc428"
+  integrity sha512-sOrec92s8U4hzuj8FhbwLYxgvqS+BqGoU+LjgqW0r1MpXLJ7xkKwiFnt5Jr9Se3A62DCJ18+14Jvc1euzmWwbA==
+
+just-pick@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/just-pick/-/just-pick-4.2.0.tgz#fb82efb385f9bd8152d2cc5edcd6834b186d8e5f"
+  integrity sha512-m6bi0P/gFq5GEQJGYfHFsdod6fogViNIhsKbPBYavqF9SKFfMKPz7kf6ROL2PblkOdaib9vN/wJ7VXhCJre5Hw==
+
+just-safe-get@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/just-safe-get/-/just-safe-get-4.2.0.tgz#8b184907473ae9995c9b30a52ce3462544437dca"
+  integrity sha512-+tS4Bvgr/FnmYxOGbwziJ8I2BFk+cP1gQHm6rm7zo61w1SbxBwWGEq/Ryy9Gb6bvnloPq6pz7Bmm4a0rjTNlXA==
+
+just-unique@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/just-unique/-/just-unique-4.2.0.tgz#80927360b92f5039fad7e7f5f8bc48904d9177b6"
+  integrity sha512-cxQGGUiit6CGUpuuiezY8N4m1wgF4o7127rXEXDFcxeDUFfdV7gSkwA26Fe2wWBiNQq2SZOgN4gSmMxB/StA8Q==
+
 keyv@^4.5.3:
   version "4.5.4"
   resolved "https://registry.npmjs.org/keyv/-/keyv-4.5.4.tgz#a879a99e29452f942439f2a405e3af8b31d4de93"
@@ -6716,6 +6736,17 @@ sanity-diff-patch@^3.0.2:
   integrity sha512-Vsx6IPuMepvfaX2/jOFuUrJaloHvSmXavS9SL3iJhhIPAu20VfumCtdH5kpKlXKL1pBgCAZhWHXfLC4Fyg7qFg==
   dependencies:
     "@sanity/diff-match-patch" "^3.0.0"
+
+sanity-plugin-autocomplete-input@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/sanity-plugin-autocomplete-input/-/sanity-plugin-autocomplete-input-2.0.0.tgz#0de874f56d2f1dceda87c9ff4a73c72ce4081f81"
+  integrity sha512-VSzJr07224A7rxInEi/shBGwcm9OAZT7LafqBZx/aElrnb/3/LHW2lDNRTZ/u/Zdo+w32334WdcvqBswDlYYjQ==
+  dependencies:
+    just-compact "^3.2.0"
+    just-pick "^4.2.0"
+    just-safe-get "^4.2.0"
+    just-unique "^4.2.0"
+    npm-run-all "^4.1.5"
 
 sanity-plugin-cloudinary@^1.1.1:
   version "1.1.1"

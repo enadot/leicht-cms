@@ -1,5 +1,5 @@
 import {defineField, defineType} from 'sanity'
-
+import {PlayIcon} from '@sanity/icons'
 export const videoType = defineType({
   name: 'video',
   type: 'object',
@@ -14,4 +14,18 @@ export const videoType = defineType({
       title: 'URL',
     }),
   ],
+  icon: PlayIcon,
+  preview: {
+    select: {
+      title: 'heading',
+      image: 'image',
+    },
+    prepare({title, image}) {
+      return {
+        title: title || 'Untitled',
+        subtitle: 'Hero',
+        media: image || PlayIcon,
+      }
+    },
+  },
 })

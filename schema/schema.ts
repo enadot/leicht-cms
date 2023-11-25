@@ -27,6 +27,10 @@ import {imageGalleryType} from './objects/imageGallery'
 import {pageType} from './pageBuilder'
 import {videoType} from './objects/videoType'
 import {formType} from './objects/formType'
+import imageWithBlurb from './objects/imageWithBlurb'
+import {SingleProjectType} from './singleProjectBuilder'
+import designer from './singletons/designer'
+import blockContentLinkOnly from './objects/blockContentLinkOnly'
 
 export default [
   home,
@@ -57,4 +61,8 @@ export default [
   pageType,
   videoType,
   formType,
+  imageWithBlurb,
+  SingleProjectType,
+  designer,
+  blockContentLinkOnly,
 ]

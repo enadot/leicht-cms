@@ -58,22 +58,22 @@ export default (S: StructureBuilder) =>
 
       S.divider(),
       S.listItem()
-      .title('Project Gallery')
-      .icon(CaseIcon)
-      .child(S.documentTypeList('project').title('Projects')),
+        .title('Project Gallery')
+        .icon(CaseIcon)
+        .child(S.documentTypeList('project').title('Projects')),
       S.listItem()
-      .title('Kitchens')
-      .icon(CatalogIcon)
-      .child(S.documentTypeList('kitchen').title('All Kitchens')),
-     
-        S.listItem()
-      .title('Bathroom Vanities')
-      .icon(CatalogIcon)
-      .child(S.documentTypeList('bathroom').title('All Vanities')),
+        .title('Kitchens')
+        .icon(CatalogIcon)
+        .child(S.documentTypeList('kitchen').title('All Kitchens')),
+
       S.listItem()
-      .title('Interior Values')
-      .icon(CatalogIcon)
-      .child(S.documentTypeList('interiorValue').title('Interior Values')),
+        .title('Bathroom Vanities')
+        .icon(CatalogIcon)
+        .child(S.documentTypeList('bathroom').title('All Vanities')),
+      S.listItem()
+        .title('Interior Values')
+        .icon(CatalogIcon)
+        .child(S.documentTypeList('interiorValue').title('Interior Values')),
       S.divider(),
       ...S.documentTypeListItems().filter(
         (item) =>
