@@ -1,9 +1,9 @@
-import {UsersIcon} from '@sanity/icons'
+import {Users} from 'lucide-react'
 
 export default {
   name: 'designer',
   title: 'Designers',
-  icon: UsersIcon,
+  icon: Users,
   type: 'document',
   fields: [
     {

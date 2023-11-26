@@ -38,10 +38,28 @@ export default defineConfig({
   schema: {
     types: schema,
     // Filter out singleton types from the global “New document” menu options
-    templates: (templates) => templates.filter(({schemaType}) => !singletonTypes.has(schemaType)),
+    templates: (prev) => {
+      const categoryChild = {
+        id: 'category-child',
+        title: 'Category: Child',
+        schemaType: 'category',
+        parameters: [{name: `parentId`, title: `Parent ID`, type: `string`}],
+        // This value will be passed-in from desk structure
+        value: ({parentId}: {parentId: string}) => ({
+          parent: {_type: 'reference', _ref: parentId},
+        }),
+      }
+
+      const filteredTemplates = prev.filter(({schemaType}) => !singletonTypes.has(schemaType))
+
+      return [...filteredTemplates, categoryChild]
+    },
   },
 
   document: {
+    unstable_comments: {
+      enabled: true, // Comments enabled
+    },
     actions: (input, context) =>
       singletonTypes.has(context.schemaType)
         ? input.filter(({action}) => action && singletonActions.has(action))

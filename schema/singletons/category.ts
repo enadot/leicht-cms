@@ -1,28 +1,33 @@
-import { StackCompactIcon } from "@sanity/icons";
-export default {
-  name: "category",
-  title: "Categories",
-  icon: StackCompactIcon,
-  type: "document",
+import {defineField, defineType} from 'sanity'
 
+import {TagIcon} from 'lucide-react'
+
+export default defineType({
+  name: 'category',
+  title: 'Category',
+  type: 'document',
+  icon: TagIcon,
   fields: [
-    {
-      name: "title",
-      title: "Title",
-      type: "string",
-    },
-    {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
+    defineField({name: 'title', type: 'string'}),
+    defineField({
+      name: 'parent',
+      type: 'reference',
+      to: [{type: 'category'}],
+      // This ensures we cannot select other "children"
       options: {
-        source: "title",
+        filter: '!defined(parent)',
       },
-    },
-    {
-      name: "description",
-      title: "Description",
-      type: "text",
-    },
+    }),
   ],
-};
+  // Customize the preview so parents are visualized in the studio
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'parent.title',
+    },
+    prepare: ({title, subtitle}) => ({
+      title,
+      subtitle: subtitle ? `– ${subtitle}` : ``,
+    }),
+  },
+})

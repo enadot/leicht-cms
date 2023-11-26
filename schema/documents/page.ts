@@ -1,9 +1,10 @@
-import {DocumentIcon} from '@sanity/icons'
+import {File} from 'lucide-react'
 import {defineField} from 'sanity'
+
 export default {
   name: 'page',
   title: 'Pages',
-  icon: DocumentIcon,
+  icon: File,
   type: 'document',
   groups: [
     {
@@ -24,6 +25,7 @@ export default {
       type: 'string',
       description: 'Enter the name of the page (CMS purposes only)',
     }),
+
     defineField({
       name: 'slug',
       title: 'Slug',
@@ -32,7 +34,31 @@ export default {
         source: 'name',
       },
     }),
-
+    defineField({
+      name: 'isParent',
+      title: 'Is a Parent Page?',
+      description: 'Enable if this page is a parent page.',
+      type: 'boolean',
+      initialValue: false,
+      group: 'structure',
+    }),
+    defineField({
+      name: 'parent',
+      title: 'Parent Page',
+      description: 'Select the parent page.',
+      type: 'reference',
+      to: [{type: 'page'}],
+      options: {
+        filter: ({document}) => {
+          return {
+            filter: '!defined(parent) && _id != $id',
+            params: {id: document._id},
+          }
+        },
+      },
+      hidden: ({document}) => Boolean(document.isParent),
+      group: 'structure',
+    }),
     defineField({
       name: 'ogImage',
       title: 'OG:Image',
@@ -86,22 +112,6 @@ export default {
       title: 'Page Builder',
       type: 'pageBuilder',
       group: 'structure',
-    }),
-    defineField({
-      name: 'hasChildren',
-      title: 'Add Children?',
-      description: 'Add custom child pages to this page.',
-      type: 'boolean',
-      initialValue: false,
-      group: 'structure',
-    }),
-    defineField({
-      name: 'children',
-      title: 'Children',
-      type: 'array',
-      of: [{type: 'page'}],
-      group: 'structure',
-      hidden: ({document}) => !document.hasChildren,
     }),
   ],
 

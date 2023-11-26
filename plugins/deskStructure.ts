@@ -1,18 +1,19 @@
 import {
-  CogIcon,
-  StackCompactIcon,
-  UsersIcon,
-  DocumentsIcon,
-  ThListIcon,
-  HomeIcon,
-  CalendarIcon,
-  CaseIcon,
-  StarIcon,
-  BookIcon as CatalogIcon,
-} from '@sanity/icons'
+  Settings,
+  Home,
+  Star,
+  ScanSearch,
+  Users,
+  BookOpen as CatalogIcon,
+  Newspaper,
+  Briefcase,
+  BookImage,
+  List,
+  Files,
+} from 'lucide-react'
 import {DefaultDocumentNodeResolver, StructureBuilder} from 'sanity/desk'
 import {SanityDocument} from 'next-sanity'
-
+import parentChild from './desk-structure/parentChild'
 import {Iframe} from 'sanity-plugin-iframe-pane'
 
 const baseUrl =
@@ -43,23 +44,26 @@ export const defaultDocumentNodeResolver: DefaultDocumentNodeResolver = (
   }
 }
 
-export default (S: StructureBuilder) =>
+export default (S: StructureBuilder, context) =>
   S.list()
     .title('Base')
     .items([
-      S.listItem().title('Homepage').icon(HomeIcon).child(S.document().schemaType('home')),
+      S.listItem().title('Homepage').icon(Home).child(S.document().schemaType('home')),
       S.divider(),
       S.listItem()
         .title('Routes')
-        .icon(DocumentsIcon)
+        .icon(Files)
         .child(
-          S.documentTypeList('page').title('All Pages').child(S.document().schemaType('page')),
+          S.documentTypeList('page')
+            .title('All Pages')
+
+            .child(S.document().schemaType('page')),
         ),
 
       S.divider(),
       S.listItem()
         .title('Project Gallery')
-        .icon(CaseIcon)
+        .icon(Briefcase)
         .child(S.documentTypeList('project').title('Projects')),
       S.listItem()
         .title('Kitchens')
@@ -99,32 +103,26 @@ export default (S: StructureBuilder) =>
       ),
       S.listItem()
         .title('Blog Posts')
-        .icon(CalendarIcon)
+        .icon(Newspaper)
         .child(S.documentTypeList('post').title('Posts')),
-      S.listItem()
-        .title('Categories')
-        .icon(StackCompactIcon)
-        .child(S.documentTypeList('category').title('Categories')),
+      parentChild('category', S, context.documentStore),
       S.listItem()
         .title('Authors')
-        .icon(UsersIcon)
+        .icon(Users)
         .child(S.documentTypeList('author').title('Authors').filter('_type == "author"')),
       S.divider(),
       S.listItem()
         .title('Catalogs')
-        .icon(CatalogIcon)
+        .icon(BookImage)
         .child(S.documentTypeList('catalog').title('Catalogs')),
 
       S.divider(),
-      S.listItem()
-        .title('Reviews')
-        .icon(StarIcon)
-        .child(S.documentTypeList('review').title('Reviews')),
+      S.listItem().title('Reviews').icon(Star).child(S.documentTypeList('review').title('Reviews')),
       S.divider(),
 
       S.listItem()
         .title('Finish Browser')
-        .icon(ThListIcon)
+        .icon(ScanSearch)
         .child(
           S.list()
             .title('All Types')
@@ -136,6 +134,6 @@ export default (S: StructureBuilder) =>
       S.divider(),
       S.listItem()
         .title('Settings')
-        .icon(CogIcon)
+        .icon(Settings)
         .child(S.document().schemaType('settings').documentId('settings')),
     ])
