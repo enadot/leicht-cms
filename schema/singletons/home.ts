@@ -17,12 +17,18 @@ export default defineType({
   ],
   fields: [
     defineField({
-      name: 'title',
-      title: 'Homepage Title',
-      description: 'The <title/> of the homepage.',
-      type: 'string',
+      name: 'meta_title',
+      title: 'Meta Title',
+      description: 'Enter a meta title for this page. (Will be separated automatically)',
+      type: 'object',
+      fields: [
+        {name: 'first', type: 'string', title: 'First'},
+        {name: 'second', type: 'string', title: 'Second'},
+        {name: 'third', type: 'string', title: 'Third (optional)'},
+      ],
       group: 'seo',
     }),
+
     defineField({
       name: 'description',
       title: 'Meta Description',
@@ -44,11 +50,19 @@ export default defineType({
     }),
     defineField({
       name: 'hero',
-      title: 'Hero Slider',
-      type: 'array',
+      title: '🎞️ Hero Slider',
+      type: 'object',
       group: 'media',
       description: 'The main hero slider on the homepage.',
-      of: [{type: 'sliderImage'}],
+      fields: [
+        {
+          type: 'heroContent',
+          name: 'hero_content',
+          title: '📄 Content',
+          description: 'Add here the main text displayed on the images:',
+        },
+        {type: 'array', name: 'hero_images', title: '📸 Images', of: [{type: 'image'}]},
+      ],
     }),
     defineField({
       name: 'content',

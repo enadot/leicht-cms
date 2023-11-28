@@ -16,7 +16,7 @@ import home from './singletons/home'
 import settings from './singletons/settings'
 import color from './documents/color'
 import twoColumnImages from './objects/twoColumnImages'
-import sliderImage from './objects/sliderImage'
+import heroContent from './objects/heroContent'
 import navItem from './objects/navItem'
 import subMenuItem from './objects/subMenuItem'
 import page from './documents/page'
@@ -55,7 +55,7 @@ export default [
   twoColumnImages,
   ratingType,
   brandType,
-  sliderImage,
+  heroContent,
   heroType,
   imageGalleryType,
   pageType,

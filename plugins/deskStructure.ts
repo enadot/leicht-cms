@@ -48,7 +48,10 @@ export default (S: StructureBuilder, context) =>
   S.list()
     .title('Base')
     .items([
-      S.listItem().title('Homepage').icon(Home).child(S.document().schemaType('home')),
+      S.listItem()
+        .title('Homepage')
+        .icon(Home)
+        .child(S.document().title('Homepage').id('home').schemaType('home')),
       S.divider(),
       S.listItem()
         .title('Routes')
