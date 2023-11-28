@@ -13,8 +13,9 @@ import {scheduledPublishing} from '@sanity/scheduled-publishing'
 
 import {autocompletInput} from 'sanity-plugin-autocomplete-input'
 import {wistiaInput} from 'sanity-plugin-wistia-input'
+import {LogoLWG} from './plugins/logo/LogoLWG'
 
-const title = process.env.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_TITLE || 'Leicht Westchester - CMS'
+import LogoIcon from './plugins/logo/Icon'
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
 const singletonTypes = new Set(['settings'])
@@ -24,7 +25,9 @@ export default defineConfig([
     name: 'leicht-wg-cms',
     title: 'Westchester & Greenwich',
     basePath: '/wg',
+    icon: LogoIcon,
     projectId,
+
     dataset,
     theme: theme,
     plugins: [
@@ -70,7 +73,7 @@ export default defineConfig([
     },
     studio: {
       components: {
-        logo: Logo,
+        logo: LogoLWG,
       },
     },
   },
@@ -81,6 +84,7 @@ export default defineConfig([
     projectId: 'x00w71pz',
     dataset: 'production',
     theme: theme,
+    icon: LogoIcon,
     plugins: [
       deskTool({
         structure: deskStructure,
