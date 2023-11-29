@@ -10,6 +10,15 @@ export default defineType({
   fields: [
     defineField({name: 'title', type: 'string'}),
     defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+    }),
+    defineField({
       name: 'parent',
       type: 'reference',
       to: [{type: 'category'}],
