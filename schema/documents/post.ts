@@ -17,7 +17,7 @@ export default {
       title: 'Category',
       type: 'reference',
       to: [{type: 'category'}],
-      options: {filter: 'defined(parent)'},
+     
     },
 
     {
