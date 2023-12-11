@@ -79,7 +79,7 @@ export default (S: StructureBuilder, context) =>
       S.listItem()
         .title('Interior Values')
         .icon(CatalogIcon)
-        .child(S.documentTypeList('interiorValue').title('Interior Values')),
+        .child(S.documentTypeList('interiorValues').title('Interior Values')),
       S.divider(),
       ...S.documentTypeListItems().filter(
         (item) =>
@@ -98,7 +98,7 @@ export default (S: StructureBuilder, context) =>
             'project',
             'kitchen',
             'bathroom',
-            'interiorValue',
+            'interiorValues',
             'landingPage',
             'reviews',
           ].includes(item.getId()),

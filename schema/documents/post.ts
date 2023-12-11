@@ -96,6 +96,16 @@ export default {
       group: 'content',
     }),
     defineField({
+      name: 'tags',
+      title: 'Tags / Keywords',
+      type: 'array',
+      group: 'seo',
+      of: [{type: 'string'}],
+      options: {
+        layout: 'tags',
+      },
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
