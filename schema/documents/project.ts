@@ -6,6 +6,24 @@ export default {
   title: 'Projects Gallery',
   icon: CaseIcon,
   type: 'document',
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO',
+    },
+    {
+      name: 'media',
+    },
+    {
+      name: 'information',
+    },
+    {
+      name: 'credits',
+    },
+    {
+      name: 'content',
+    },
+  ],
   fieldsets: [
     {
       name: 'address',
@@ -21,12 +39,14 @@ export default {
       type: 'boolean',
       initialValue: false,
     },
+
     {
       name: 'title',
       title: 'Title',
       description: 'Enter name for the project',
       type: 'string',
       validation: (Rule) => Rule.required(),
+      group: 'seo',
     },
 
     {
@@ -42,6 +62,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     defineField({
+      name: 'description',
+      title: 'Meta Description',
+      type: 'text',
+      group: 'seo',
+      rows: 4,
+      validation: (Rule) => Rule.required().max(260).warning('Maximum 260 characters recommended.'),
+      description: 'Enter a brief meta description (up to 260 characters).',
+    }),
+    defineField({
       title: 'Project Type',
       name: 'projectType',
       type: 'string',
@@ -53,13 +82,28 @@ export default {
           {title: 'Commercial', value: 'Commercial'},
         ],
       },
+      group: 'information',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'style',
+      type: 'string',
+      group: 'information',
+      options: {
+        layout: 'radio',
+        list: [
+          {title: 'Modern', value: 'modern'},
+          {title: 'Traditional', value: 'traditional'},
+          {title: 'Transitional', value: 'transitional'},
+        ],
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'designer',
-      type: 'reference',
-      to: [{type: 'designer'}],
+      type: 'string',
       validation: (Rule) => Rule.required(),
+      group: 'credits',
     }),
     defineField({
       name: 'architect',
@@ -69,6 +113,13 @@ export default {
         autocompleteFieldPath: 'architect',
         disableNew: false,
       },
+      group: 'credits',
+    }),
+    defineField({
+      name: 'photographer',
+      type: 'string',
+      initialValue: 'Zdravko Cota',
+      group: 'credits',
     }),
     defineField({
       name: 'city',
@@ -79,6 +130,7 @@ export default {
         disableNew: false,
       },
       validation: (Rule) => Rule.required(),
+      group: 'information',
     }),
     defineField({
       name: 'state',
@@ -89,6 +141,7 @@ export default {
         disableNew: false,
       },
       validation: (Rule) => Rule.required(),
+      group: 'information',
     }),
     {
       name: 'mainImage',
@@ -99,14 +152,105 @@ export default {
         hotspot: true,
       },
       validation: (Rule) => Rule.required(),
+      group: 'media',
+    },
+
+    {
+      name: 'firstImage',
+      title: 'Image #1',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+      group: 'media',
     },
     {
-      name: 'body',
-      title: 'Body',
-      description: 'Enter the project blurb along with the images here',
-      type: 'singleProjectBuilder',
+      name: 'firsttitle',
+      type: 'string',
       validation: (Rule) => Rule.required(),
+      group: 'content',
     },
+    {
+      name: 'firstparagraph',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      group: 'content',
+    },
+    {
+      name: 'secondImage',
+      title: 'Image #2',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+      group: 'media',
+    },
+    {
+      name: 'thirdImage',
+      title: 'Image #3',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+      group: 'media',
+    },
+    {
+      name: 'secondtitle',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      group: 'content',
+    },
+    {
+      name: 'secondparagraph',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      group: 'content',
+    },
+    {
+      name: 'fourthImage',
+      title: 'Image #4',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+      group: 'media',
+    },
+    {
+      name: 'fifthImage',
+      title: 'Image #5',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+      group: 'media',
+    },
+    {
+      name: 'sixthImage',
+      title: 'Image #6',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+      group: 'media',
+    },
+
+    {
+      name: 'seventhImage',
+      title: 'Image #7',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+      group: 'media',
+    },
+
     {
       name: 'publishedAt',
       title: 'Published at',

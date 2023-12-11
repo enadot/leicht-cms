@@ -8,7 +8,6 @@ import {
   Newspaper,
   Briefcase,
   BookImage,
-  List,
   Files,
 } from 'lucide-react'
 import {DefaultDocumentNodeResolver, StructureBuilder} from 'sanity/desk'
@@ -101,9 +100,10 @@ export default (S: StructureBuilder, context) =>
             'bathroom',
             'interiorValue',
             'landingPage',
-            'review',
+            'reviews',
           ].includes(item.getId()),
       ),
+
       S.listItem()
         .title('Blog Posts')
         .icon(Newspaper)
@@ -120,7 +120,10 @@ export default (S: StructureBuilder, context) =>
         .child(S.documentTypeList('catalog').title('Catalogs')),
 
       S.divider(),
-      S.listItem().title('Reviews').icon(Star).child(S.documentTypeList('review').title('Reviews')),
+      S.listItem()
+        .title('Reviews')
+        .icon(Star)
+        .child(S.documentTypeList('reviews').title('Reviews')),
       S.divider(),
 
       S.listItem()

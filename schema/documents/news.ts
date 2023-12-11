@@ -1,22 +1,10 @@
 import {CalendarIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 export default {
-  name: 'post',
-  title: 'Blog Posts',
+  name: 'news',
+  title: 'Articles (OLD)',
   icon: CalendarIcon,
   type: 'document',
-  groups: [
-    {
-      name: 'seo',
-      title: 'SEO',
-    },
-    {
-      name: 'media',
-    },
-    {
-      name: 'content',
-    },
-  ],
   fields: [
     defineField({
       name: 'featured',
@@ -43,11 +31,10 @@ export default {
 
     defineField({
       name: 'title',
-      title: 'Project Title (h1 & meta title)',
+      title: 'Title',
       description: `Make it as enticing as possible to convert users in social feeds and Google searches. Ideally between 15 and 70 characters`,
       type: 'string',
       validation: (Rule) => Rule.required(),
-      group: 'seo',
     }),
     defineField({
       name: 'slug',
@@ -65,7 +52,6 @@ export default {
       type: 'text',
       rows: 4,
       validation: (Rule) => Rule.required(),
-      group: 'seo',
     }),
 
     defineField({
@@ -76,7 +62,6 @@ export default {
         hotspot: true,
       },
       validation: (Rule) => Rule.required(),
-      group: 'media',
     }),
     defineField({
       name: 'thumbnail',
@@ -86,14 +71,12 @@ export default {
       options: {
         hotspot: true,
       },
-      group: 'media',
     }),
     defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
       validation: (Rule) => Rule.required(),
-      group: 'content',
     }),
     defineField({
       name: 'publishedAt',

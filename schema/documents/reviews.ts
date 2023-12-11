@@ -2,13 +2,25 @@ import {StarIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default {
-  name: 'review',
+  name: 'reviews',
   title: 'Reviews',
   icon: StarIcon,
   type: 'document',
   fields: [
     defineField({
-      name: 'source',
+      name: 'render_component',
+      type: 'string',
+
+      options: {
+        layout: 'radio',
+        list: [
+          {title: 'ReviewsSlider', value: 'ReviewsSlider'},
+          {title: 'ReviewsSliderWithImage', value: 'ReviewsSliderWithImage'},
+        ],
+      },
+    }),
+    defineField({
+      name: 'review_source',
       type: 'string',
       initialValue: 'Google',
       options: {
@@ -31,30 +43,28 @@ export default {
       initialValue: new Date().toISOString(),
     },
     {
-      name: 'authorName',
+      name: 'title',
+      title: 'Name of Author',
       type: 'string',
       description: 'Enter the name of the author of this review',
     },
+
     {
-      name: 'profilePicture',
-      type: 'image',
+      name: 'profile',
       description: 'Upload a profile picture for this author (optional)',
-    },
-    {
-      name: 'withImage',
-      title: 'Add a featured Image?',
-      type: 'boolean',
-      description: 'Check this box if you want to add a featured image to this review',
-      initialValue: false,
-    },
-    {
-      name: 'featuredImage',
-      description: 'Upload a featured image for this review.',
       type: 'image',
       options: {
         hotspot: true,
       },
-      hidden: ({document}) => !document.withImage, // Hide if withImage is not true
+    },
+
+    {
+      name: 'featuredImage',
+      description: 'Upload a featured image for this review (optional)',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'body',
@@ -66,7 +76,7 @@ export default {
 
   preview: {
     select: {
-      title: 'authorName',
+      title: 'title',
       author: 'author.name',
       media: 'profilePicture',
     },

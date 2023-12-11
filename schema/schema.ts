@@ -20,7 +20,7 @@ import heroContent from './objects/heroContent'
 import navItem from './objects/navItem'
 import subMenuItem from './objects/subMenuItem'
 import page from './documents/page'
-import review from './documents/review'
+
 import {heroType} from './objects/heroType'
 
 import {imageGalleryType} from './objects/imageGallery'
@@ -31,8 +31,11 @@ import imageWithBlurb from './objects/imageWithBlurb'
 import {SingleProjectType} from './singleProjectBuilder'
 import designer from './singletons/designer'
 import blockContentLinkOnly from './objects/blockContentLinkOnly'
+import reviews from './documents/reviews'
+import news from './documents/news'
 
 export default [
+  news,
   home,
   navItem,
   subMenuItem,
@@ -43,7 +46,8 @@ export default [
   kitchen,
   bathroom,
   interiorValue,
-  review,
+
+  reviews,
   project,
   catalog,
   post,
