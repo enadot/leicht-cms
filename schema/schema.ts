@@ -34,6 +34,8 @@ import blockContentLinkOnly from './objects/blockContentLinkOnly'
 import reviews from './documents/reviews'
 import news from './documents/news'
 
+import {customLink} from './objects/customLink'
+
 export default [
   news,
   home,
@@ -46,7 +48,7 @@ export default [
   kitchen,
   bathroom,
   interiorValue,
-
+  customLink,
   reviews,
   project,
   catalog,

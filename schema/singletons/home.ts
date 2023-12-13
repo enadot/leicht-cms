@@ -65,6 +65,16 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'video',
+      title: '🎥 Video Player',
+
+      type: 'object',
+      fields: [
+        {name: 'url', type: 'url', title: 'Video URL'},
+        {name: 'cover', type: 'image', title: 'Cover Image'},
+      ],
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
