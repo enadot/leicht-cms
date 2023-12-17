@@ -76,6 +76,12 @@ export default {
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'removeBaseTitle',
+      type: 'boolean',
+      title: 'Remove Base Title?',
+      group: 'seo',
+    }),
+    defineField({
       name: 'description',
       title: 'Meta Description',
       type: 'text',

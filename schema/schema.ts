@@ -35,8 +35,10 @@ import reviews from './documents/reviews'
 import news from './documents/news'
 
 import {customLink} from './objects/customLink'
+import {location} from './objects/location'
 
 export default [
+  location,
   news,
   home,
   navItem,

@@ -43,7 +43,16 @@ export default {
 
     defineField({
       name: 'title',
-      title: 'Project Title (h1 & meta title)',
+      title: 'Project Title',
+      description: `Enter the name of the project. (Will be rendered as an H1)`,
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      group: 'seo',
+    }),
+
+    defineField({
+      name: 'metaTitle',
+      title: 'Meta Title',
       description: `Make it as enticing as possible to convert users in social feeds and Google searches. Ideally between 15 and 70 characters`,
       type: 'string',
       validation: (Rule) => Rule.required(),

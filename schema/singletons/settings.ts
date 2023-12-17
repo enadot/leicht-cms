@@ -16,5 +16,15 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      name: 'locations',
+     
+      type: 'array',
+      of: [
+        {
+          type: 'location',
+        },
+      ],
+    }),
   ],
 })
