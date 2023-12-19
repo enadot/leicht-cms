@@ -10,8 +10,14 @@ export default defineType({
       type: 'reference',
       to: [{type: 'page'}],
       description: 'Select the page this nav link should point to',
-      validation: (Rule) => Rule.required(),
-      hidden: (field) => field.parent.submenuOption,
+      validation: (Rule) =>
+        Rule.custom((field: any) => {
+          if (field?.parent?.submenuOption && !field) {
+            return 'You must select a page for this nav item'
+          }
+          return true
+        }),
+      hidden: (field: any) => field.parent.submenuOption,
     },
     {
       name: 'text',
