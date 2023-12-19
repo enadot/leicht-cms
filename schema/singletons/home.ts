@@ -70,6 +70,7 @@ export default defineType({
 
       type: 'object',
       fields: [
+        {name: 'title', type: 'string', title: 'Title'},
         {name: 'url', type: 'url', title: 'Video URL'},
         {name: 'cover', type: 'image', title: 'Cover Image'},
       ],
