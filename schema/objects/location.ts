@@ -49,6 +49,10 @@ export const location = defineType({
           name: 'zip',
           type: 'string',
         },
+        {
+          name: 'googleMapsLink',
+          type: 'url',
+        },
       ],
     },
   ],
