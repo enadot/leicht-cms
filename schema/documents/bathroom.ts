@@ -92,7 +92,8 @@ export default {
     {
       name: 'firstparagraph',
       title: 'First Paragraph',
-      type: 'string',
+      type: 'text',
+      rows: 10,
     },
     {
       name: 'firstImage',
@@ -126,7 +127,8 @@ export default {
     {
       name: 'secondparagraph',
       title: 'Second Paragraph',
-      type: 'string',
+      type: 'text',
+      rows: 10,
     },
 
     defineField({
@@ -134,7 +136,7 @@ export default {
       title: 'Tags / Keywords',
       type: 'array',
       group: 'seo',
-      of: [{type: 'string'}],
+      of: [{type: 'strinsg'}],
       options: {
         layout: 'tags',
       },

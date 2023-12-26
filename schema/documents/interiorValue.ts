@@ -66,7 +66,8 @@ export default {
     {
       name: 'firstparagraph',
       title: 'First Paragraph',
-      type: 'string',
+      type: 'text',
+      rows: 10,
     },
     {
       name: 'firstImage',
@@ -103,7 +104,8 @@ export default {
     {
       name: 'secondparagraph',
       title: 'Second Paragraph',
-      type: 'string',
+      type: 'text',
+      rows: 10,
     },
     defineField({
       name: 'meta_tags',

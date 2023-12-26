@@ -182,7 +182,8 @@ export default {
     },
     {
       name: 'firstparagraph',
-      type: 'string',
+      type: 'text',
+      rows: 10,
       validation: (Rule) => Rule.required(),
       group: 'content',
     },
@@ -214,7 +215,8 @@ export default {
     },
     {
       name: 'secondparagraph',
-      type: 'string',
+      type: 'text',
+      rows: 10,
       validation: (Rule) => Rule.required(),
       group: 'content',
     },

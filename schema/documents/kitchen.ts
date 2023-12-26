@@ -104,7 +104,8 @@ export default {
     {
       name: 'firstparagraph',
       title: 'First Paragraph',
-      type: 'string',
+      type: 'text',
+      rows: 10,
       validation: (Rule) => Rule.required(),
       group: 'content',
     },
@@ -138,7 +139,8 @@ export default {
     {
       name: 'secondparagraph',
       title: 'Second Paragraph',
-      type: 'string',
+      type: 'text',
+      rows: 10,
       validation: (Rule) => Rule.required(),
       group: 'content',
     },
