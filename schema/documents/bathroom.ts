@@ -136,7 +136,7 @@ export default {
       title: 'Tags / Keywords',
       type: 'array',
       group: 'seo',
-      of: [{type: 'strinsg'}],
+      of: [{type: 'string'}],
       options: {
         layout: 'tags',
       },
