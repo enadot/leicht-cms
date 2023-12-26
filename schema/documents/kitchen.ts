@@ -43,7 +43,12 @@ export default {
       name: 'productName',
       title: 'Product Name',
       description: 'Enter the original name of this kitchen collection by Leicht',
-      type: 'string',
+      type: 'autocomplete',
+
+      options: {
+        autocompleteFieldPath: 'productName',
+        disableNew: false,
+      },
     }),
     defineField({
       name: 'slug',
