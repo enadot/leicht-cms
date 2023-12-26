@@ -33,7 +33,7 @@ export default {
     }),
     defineField({
       name: 'metaTitle',
-      title: 'metaTitle',
+      title: 'Meta Title',
       description: 'Enter the meta title for this page: used for <title> tag',
       type: 'string',
       group: 'seo',
@@ -41,7 +41,7 @@ export default {
     }),
     defineField({
       name: 'productName',
-      title: 'productName',
+      title: 'Product Name',
       description: 'Enter the original name of this kitchen collection by Leicht',
       type: 'string',
     }),

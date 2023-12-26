@@ -47,12 +47,11 @@ export default {
       type: 'string',
       group: 'seo',
       validation: (Rule) => Rule.required(),
-
     }),
 
     defineField({
       name: 'metaTitle',
-      title: 'metaTitle',
+      title: 'Meta Title',
       description: 'Enter the meta title for this page: used for <title> tag',
       type: 'string',
       group: 'seo',
