@@ -23,12 +23,23 @@ export default {
     },
   ],
   fields: [
-    {
+    defineField({
       name: 'title',
       title: 'Title',
-      group: 'seo',
+      description: 'Enter a title (H1) of this page used for SEO',
       type: 'string',
-    },
+      group: 'seo',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'metaTitle',
+      title: 'metaTitle',
+      description: 'Enter the meta title for this page: used for <title> tag',
+      type: 'string',
+      group: 'seo',
+      validation: (Rule) => Rule.required(),
+    }),
+
     defineField({
       name: 'description',
       title: 'Meta Description',

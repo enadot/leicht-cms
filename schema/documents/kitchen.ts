@@ -26,7 +26,23 @@ export default {
     defineField({
       name: 'title',
       title: 'Title',
-      description: 'Enter the name of this kitchen: used for SEO <title> & h1 as well.',
+      description: 'Enter a title (H1) of this kitchen used for SEO',
+      type: 'string',
+      group: 'seo',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'metaTitle',
+      title: 'metaTitle',
+      description: 'Enter the meta title for this page: used for <title> tag',
+      type: 'string',
+      group: 'seo',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'productName',
+      title: 'productName',
+      description: 'Enter the original name of this kitchen collection by Leicht',
       type: 'string',
     }),
     defineField({

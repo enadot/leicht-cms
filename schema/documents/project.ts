@@ -40,15 +40,24 @@ export default {
       initialValue: false,
     },
 
-    {
+    defineField({
       name: 'title',
       title: 'Title',
-      description: 'Enter name for the project',
+      description: 'Enter name for the project (H1)',
       type: 'string',
-      validation: (Rule) => Rule.required(),
       group: 'seo',
-    },
+      validation: (Rule) => Rule.required(),
 
+    }),
+
+    defineField({
+      name: 'metaTitle',
+      title: 'metaTitle',
+      description: 'Enter the meta title for this page: used for <title> tag',
+      type: 'string',
+      group: 'seo',
+      validation: (Rule) => Rule.required(),
+    }),
     {
       name: 'slug',
       title: 'Slug',
