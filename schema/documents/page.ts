@@ -69,7 +69,7 @@ export default {
     }),
     defineField({
       name: 'title',
-      title: 'Page Title',
+      title: 'Meta Title',
       description: 'The <title/> of the page.',
       type: 'string',
       group: 'seo',
