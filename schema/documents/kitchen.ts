@@ -26,9 +26,9 @@ export default {
     defineField({
       name: 'title',
       title: 'Title',
-      description: 'Enter a title (H1) of this kitchen used for SEO',
+      description: 'Enter a title for this kitchen; Will be used on the hero banner image.',
       type: 'string',
-      group: 'seo',
+      group: 'information',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
